@@ -20,6 +20,17 @@ public class SpringIn5StepsApplication {
 				SpringApplication.run(SpringIn5StepsApplication.class, args);
 		BinarySearchImpl binarySearch = 
 				applicationContext.getBean(BinarySearchImpl.class);
+
+		BinarySearchImpl binarySearch1 = 
+				applicationContext.getBean(BinarySearchImpl.class);
+
+		//BS : to check scope of the bean
+		//singleton(default) - one instance per Spring context
+		//prototype - new bean whenever requested
+		//check in the console for the id if it return same bean each time it call or initiate a new bean again for the binarySearch1
+		System.out.println(binarySearch);
+		System.out.println(binarySearch1);
+		
 		int result = 
 				binarySearch.binarySearch(new int[] { 12, 4, 6 }, 3);
 		System.out.println(result);
