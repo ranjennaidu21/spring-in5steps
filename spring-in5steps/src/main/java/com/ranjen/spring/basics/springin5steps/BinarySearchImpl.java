@@ -1,23 +1,29 @@
 package com.ranjen.spring.basics.springin5steps;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BinarySearchImpl {
 
 	@Autowired
-	//if there are two bean implementing same interface, we can choose which bean by specifying the bean name as below(refactor: eg change
+	//if there are two bean implementing same interface, we can choose which bean by 3 ways (AM-Autowiring ways)
+	//AM-1: specifying the bean name as below(refactor: eg change
 	// quickSortAlgorithm to bubbleSortAlgorithm)
-	private SortAlgorithm quickSortAlgorithm;
+	//this is recommended instead of putting third way AM-3 by mentioning Qualifier as need to change in other file as well
+	//private SortAlgorithm quickSortAlgorithm;
 	
-	//or add @Primary in the bean class which have higher precedence regardless of name mentioned here. 
+	//AM-2 : or add @Primary in the bean class which have higher precedence regardless of name mentioned here. 
 	//private SortAlgorithm sortAlgorithm;
 	
+	//AM-3 : or Using Qualifiers to mention it refer which bean
+	@Qualifier("quick")
+	private SortAlgorithm sortAlgorithm;
 	public int binarySearch(int[] numbers, int numberToSearchFor) {
 
-		int[] sortedNumbers = quickSortAlgorithm.sort(numbers);
-		System.out.println(quickSortAlgorithm);
+		int[] sortedNumbers = sortAlgorithm.sort(numbers);
+		System.out.println(sortAlgorithm);
 		// Search the array
 		return 3;
 	}
