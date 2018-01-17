@@ -7,8 +7,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.ranjen.spring.basics.springin5steps.xml.XmlPersonDAO;
 
-@Configuration
-@ComponentScan
 public class SpringIn5StepsXMLContextApplication {
 	
 	//Check in applicationContext how the XmlJdbcConnection is autowired to this XmlPersonDAO without using any annotation
