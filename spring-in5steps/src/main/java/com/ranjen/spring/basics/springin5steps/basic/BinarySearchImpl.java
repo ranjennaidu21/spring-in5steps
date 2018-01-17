@@ -28,7 +28,7 @@ public class BinarySearchImpl {
 	//private SortAlgorithm sortAlgorithm;
 	
 	//AM-3 : or Using Qualifiers to mention it refer which bean
-	@Qualifier("quick")
+	@Qualifier("bubble")
 	private SortAlgorithm sortAlgorithm;
 	public int binarySearch(int[] numbers, int numberToSearchFor) {
 

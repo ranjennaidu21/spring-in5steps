@@ -6,7 +6,7 @@
 	<groupId>com.ranjen.spring.basics</groupId>
 	<artifactId>spring-in-5-steps</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>jar</packaging> 
 
 	<name>spring-in-5-steps</name>
 	<description>Demo project for Spring Boot</description>
@@ -25,9 +25,31 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
+	<!-- This dependency have been removed as we moving from Spring boot to normal Spring application -->
+<!-- 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
+		</dependency> -->
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		
+		<!-- implementation for the slf4j-api , if no implementation log wont work -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
 		</dependency>
 		
 		<!-- To Use Spring CDI which is another alternative Standard annotation instead of using Spring Annotation -->
