@@ -10,8 +10,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+//@Component
+//Component is very generic. Repository,Service and Controller is specific annotation of Component. Changing this will
+//not affect anything.Since this about business logic so can change to Service annotation. 
+@Service
 //BS: to check scope of the bean
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class BinarySearchImpl {
