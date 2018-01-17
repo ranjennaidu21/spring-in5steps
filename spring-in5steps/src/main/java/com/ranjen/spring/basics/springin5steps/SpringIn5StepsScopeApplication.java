@@ -22,7 +22,7 @@ public class SpringIn5StepsScopeApplication {
 				SpringApplication.run(SpringIn5StepsScopeApplication.class, args);*/
 		
 		try (AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(
-				SpringIn5StepsComponentScanApplication.class)) 
+				SpringIn5StepsScopeApplication.class)) 
 		{
 		PersonDAO personDao = 
 				applicationContext.getBean(PersonDAO.class);
