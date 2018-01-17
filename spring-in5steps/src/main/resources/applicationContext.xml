@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+<!-- 	1)first create all the beans first -->
+    <bean id="xmlJdbcConnection" 
+    	class="com.ranjen.spring.basics.springin5steps.xml.XmlJdbcConnection">
+    </bean>
+
+<!-- 	2)second autowire xmlJdbcConnection into  the xmlPersonDAO bean by using the property tag
+			 by add the injected property name with the ref referring to the bean id that should be injected -->
+    <bean id="xmlPersonDAO" class="com.ranjen.spring.basics.springin5steps.xml.XmlPersonDAO">
+    		<property name="xmlJdbcConnection" ref="xmlJdbcConnection"/>
+    </bean>
+
+</beans>
